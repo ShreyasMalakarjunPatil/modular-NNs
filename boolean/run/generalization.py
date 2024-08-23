@@ -21,7 +21,7 @@ def run(args):
     if os.path.exists(path):
         print('Shreyas:', path)
     else:
-        train_loader, validation_loader, test_loader = load.load_data(args.dataset_path, args.modularity, args.batch_size, args.dataset_noise, args.dataset_split, args.dataset_split_seed)
+        train_loader, train_loader2, validation_loader, test_loader = load.load_data(args.dataset_path, args.modularity, args.batch_size, args.dataset_noise, args.dataset_split, args.dataset_split_seed)
         loss = load.load_loss(args.loss)
         opt, opt_kwargs = load.load_optimizer(args.optimizer)
 
@@ -90,13 +90,16 @@ def run(args):
                     ], weight_decay=args.weight_decay, **opt_kwargs)
 
         scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=args.gamma, last_epoch=- 1)
-        (model, train_loss, test_loss, train_accuracy, test_accuracy) = train.train_network(model, loss, optimizer, train_loader, validation_loader, test_loader, dev, args.epochs, scheduler)
+        (model, validation_loss, train_loss, test_loss, validation_accuracy, train_accuracy, test_accuracy) = train.train_network(model, loss, optimizer, train_loader, train_loader2, validation_loader, test_loader, dev, args.epochs, scheduler)
 
         results = []
         results.append(train_loss)
+        results.append(validation_loss)
         results.append(test_loss)
         results.append(train_accuracy)
+        results.append(validation_accuracy)
         results.append(test_accuracy)
+        
 
         if args.model=='mlp':
 

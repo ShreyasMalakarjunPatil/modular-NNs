@@ -60,14 +60,16 @@ def load_data(dataset_path, modularity, batch_size, dataset_noise=False, dataset
     train_size = train_size - val_size
 
     train_dataset, val_dataset, test_dataset = torch.utils.data.random_split(dataset, [train_size, val_size, test_size], generator=generator)
-    
+    train_dataset2 = copy.deepcopy(train_dataset)
     if dataset_noise:            
         test_dataset = copy.deepcopy(test_dataset)
         val_dataset = copy.deepcopy(val_dataset)
         val_dataset.dataset.transform = None
         test_dataset.dataset.transform = None
+        train_dataset2.dataset.transform = None
 
     batch_size_val = len(val_dataset)
+    batch_size_train = len(train_dataset2)
     batch_size_test = len(test_dataset)
 
     print('Shreyas dataset sizes : ',len(train_dataset), len(test_dataset), len(val_dataset))
@@ -76,6 +78,10 @@ def load_data(dataset_path, modularity, batch_size, dataset_noise=False, dataset
                                                     batch_size = batch_size,
                                                     shuffle = True,
                                                     num_workers = 2)
+    train_loader2 = torch.utils.data.DataLoader(dataset=train_dataset2,
+                                                    batch_size=batch_size_train,
+                                                    shuffle=False,
+                                                    num_workers=2)
     val_loader = torch.utils.data.DataLoader(dataset=val_dataset,
                                                     batch_size=batch_size_val,
                                                     shuffle=False,
@@ -85,7 +91,7 @@ def load_data(dataset_path, modularity, batch_size, dataset_noise=False, dataset
                                                     shuffle=False,
                                                     num_workers=2)
 
-    return train_loader, val_loader, test_loader
+    return train_loader, train_loader2, val_loader, test_loader
 
 def load_routing(args):
 

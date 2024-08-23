@@ -24,7 +24,10 @@ def test_boolean(network, loss, dataloader, dev):
 
     return total_loss.detach().cpu().numpy(), acc.detach().cpu().numpy()
 
-def train_network(network, loss, optimizer, train_loader, validation_loader, test_loader, dev, epochs, scheduler):
+def train_network(network, loss, optimizer, train_loader, train_loader2, validation_loader, test_loader, dev, epochs, scheduler):
+
+    train_loss = []
+    train_accuracy = []
     
     validation_loss = []
     validation_accuracy = []
@@ -47,6 +50,10 @@ def train_network(network, loss, optimizer, train_loader, validation_loader, tes
                     epoch, batch_idx * len(data), len(train_loader.dataset),
                            100. * batch_idx / len(train_loader), batch_loss.item()))
 
+        train_avg_loss, train_acc1 = test_boolean(network, loss, train_loader2, dev)
+        train_loss.append(train_avg_loss)
+        train_accuracy.append(train_acc1)
+
         val_avg_loss, val_acc1 = test_boolean(network, loss, validation_loader, dev)
         validation_loss.append(val_avg_loss)
         validation_accuracy.append(val_acc1)
@@ -57,4 +64,4 @@ def train_network(network, loss, optimizer, train_loader, validation_loader, tes
 
         scheduler.step()
 
-    return network, validation_loss, test_loss, validation_accuracy, test_accuracy
+    return network, validation_loss, train_loss, test_loss, validation_accuracy, train_accuracy, test_accuracy
