@@ -1,0 +1,501 @@
+Namespace(arch=[6, 36, 36, 36, 2], batch_size=64, dataset_noise=False, dataset_path='./datasets/generalization/', dataset_split=0.8, dataset_split_seed=40, epochs=1000, experiment='generalization', gamma=1.0, gpu=0, known_func_outputs=True, known_module_inputs=True, known_module_locations=True, loss='BCE', lr=0.01, lr_module_input=0.1, lr_module_location=None, model='hierarchically_modular_shared_modules', modularity=[6, 3, 2, 2], module_arch=[2, 12, 1], num_modules=[3, 2], num_shared_modules=2, num_slots=[3, 2], num_tasks=1, optimizer='adam', per_sample_routing=False, pruning_ratio=0.0, result_path='./results/', scheduler='exp', seed=0, tau=None, topk=2, use_gumbel=False, weight_decay=0.0001, workers=4)
+Use Cuda True
+Shreyas dataset sizes :  41 13 10
+Train Epoch: 0 [0/41 (0%)]	Loss: 0.681423
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.6452, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.6615, device='cuda:0')
+Train Epoch: 1 [0/41 (0%)]	Loss: 0.668704
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.6207, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.6461, device='cuda:0')
+Train Epoch: 2 [0/41 (0%)]	Loss: 0.657111
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.5973, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.6318, device='cuda:0')
+Train Epoch: 3 [0/41 (0%)]	Loss: 0.646642
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.5751, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.6186, device='cuda:0')
+Train Epoch: 4 [0/41 (0%)]	Loss: 0.637325
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.5541, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.6065, device='cuda:0')
+Train Epoch: 5 [0/41 (0%)]	Loss: 0.629090
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.5340, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5953, device='cuda:0')
+Train Epoch: 6 [0/41 (0%)]	Loss: 0.621840
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.5149, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5851, device='cuda:0')
+Train Epoch: 7 [0/41 (0%)]	Loss: 0.615536
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.4965, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5757, device='cuda:0')
+Train Epoch: 8 [0/41 (0%)]	Loss: 0.610168
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.4792, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5673, device='cuda:0')
+Train Epoch: 9 [0/41 (0%)]	Loss: 0.605790
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.4628, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5598, device='cuda:0')
+Train Epoch: 10 [0/41 (0%)]	Loss: 0.602406
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.4474, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5532, device='cuda:0')
+Train Epoch: 11 [0/41 (0%)]	Loss: 0.599934
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.4331, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5476, device='cuda:0')
+Train Epoch: 12 [0/41 (0%)]	Loss: 0.598324
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.4201, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5430, device='cuda:0')
+Train Epoch: 13 [0/41 (0%)]	Loss: 0.597633
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.4087, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5393, device='cuda:0')
+Train Epoch: 14 [0/41 (0%)]	Loss: 0.597680
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3991, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5365, device='cuda:0')
+Train Epoch: 15 [0/41 (0%)]	Loss: 0.598146
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3912, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5342, device='cuda:0')
+Train Epoch: 16 [0/41 (0%)]	Loss: 0.598741
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3851, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5324, device='cuda:0')
+Train Epoch: 17 [0/41 (0%)]	Loss: 0.599203
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3807, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5310, device='cuda:0')
+Train Epoch: 18 [0/41 (0%)]	Loss: 0.599311
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3779, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5296, device='cuda:0')
+Train Epoch: 19 [0/41 (0%)]	Loss: 0.598920
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3766, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5284, device='cuda:0')
+Train Epoch: 20 [0/41 (0%)]	Loss: 0.597969
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3766, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5272, device='cuda:0')
+Train Epoch: 21 [0/41 (0%)]	Loss: 0.596546
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3777, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5261, device='cuda:0')
+Train Epoch: 22 [0/41 (0%)]	Loss: 0.594712
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3797, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5254, device='cuda:0')
+Train Epoch: 23 [0/41 (0%)]	Loss: 0.593164
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3826, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5248, device='cuda:0')
+Train Epoch: 24 [0/41 (0%)]	Loss: 0.591256
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3861, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5243, device='cuda:0')
+Train Epoch: 25 [0/41 (0%)]	Loss: 0.589134
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3900, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5240, device='cuda:0')
+Train Epoch: 26 [0/41 (0%)]	Loss: 0.586940
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3941, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5235, device='cuda:0')
+Train Epoch: 27 [0/41 (0%)]	Loss: 0.584513
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3983, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5232, device='cuda:0')
+Train Epoch: 28 [0/41 (0%)]	Loss: 0.582176
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.4021, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5229, device='cuda:0')
+Train Epoch: 29 [0/41 (0%)]	Loss: 0.580055
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.4056, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5223, device='cuda:0')
+Train Epoch: 30 [0/41 (0%)]	Loss: 0.577854
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.4085, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5215, device='cuda:0')
+Train Epoch: 31 [0/41 (0%)]	Loss: 0.575530
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.4107, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5202, device='cuda:0')
+Train Epoch: 32 [0/41 (0%)]	Loss: 0.573010
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.4120, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5184, device='cuda:0')
+Train Epoch: 33 [0/41 (0%)]	Loss: 0.570241
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.4123, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5161, device='cuda:0')
+Train Epoch: 34 [0/41 (0%)]	Loss: 0.567213
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.4115, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5132, device='cuda:0')
+Train Epoch: 35 [0/41 (0%)]	Loss: 0.563781
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.4095, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5099, device='cuda:0')
+Train Epoch: 36 [0/41 (0%)]	Loss: 0.560148
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.4066, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5060, device='cuda:0')
+Train Epoch: 37 [0/41 (0%)]	Loss: 0.556146
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.4028, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.5013, device='cuda:0')
+Train Epoch: 38 [0/41 (0%)]	Loss: 0.551651
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3974, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.4962, device='cuda:0')
+Train Epoch: 39 [0/41 (0%)]	Loss: 0.546982
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3908, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.4905, device='cuda:0')
+Train Epoch: 40 [0/41 (0%)]	Loss: 0.541737
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3835, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.4841, device='cuda:0')
+Train Epoch: 41 [0/41 (0%)]	Loss: 0.535835
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3754, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.4773, device='cuda:0')
+Train Epoch: 42 [0/41 (0%)]	Loss: 0.529659
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3673, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.4700, device='cuda:0')
+Train Epoch: 43 [0/41 (0%)]	Loss: 0.522996
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3593, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.4620, device='cuda:0')
+Train Epoch: 44 [0/41 (0%)]	Loss: 0.515633
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3518, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.4536, device='cuda:0')
+Train Epoch: 45 [0/41 (0%)]	Loss: 0.507683
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3450, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.4454, device='cuda:0')
+Train Epoch: 46 [0/41 (0%)]	Loss: 0.499985
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3392, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.4362, device='cuda:0')
+Train Epoch: 47 [0/41 (0%)]	Loss: 0.490471
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3336, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.4273, device='cuda:0')
+Train Epoch: 48 [0/41 (0%)]	Loss: 0.480637
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3290, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.4183, device='cuda:0')
+Train Epoch: 49 [0/41 (0%)]	Loss: 0.470771
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3244, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.4092, device='cuda:0')
+Train Epoch: 50 [0/41 (0%)]	Loss: 0.461117
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3182, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.3990, device='cuda:0')
+Train Epoch: 51 [0/41 (0%)]	Loss: 0.450766
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3105, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.3875, device='cuda:0')
+Train Epoch: 52 [0/41 (0%)]	Loss: 0.439450
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.3009, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.3750, device='cuda:0')
+Train Epoch: 53 [0/41 (0%)]	Loss: 0.427790
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.2898, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.3629, device='cuda:0')
+Train Epoch: 54 [0/41 (0%)]	Loss: 0.416649
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.2758, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.3511, device='cuda:0')
+Train Epoch: 55 [0/41 (0%)]	Loss: 0.405620
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.2608, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.3396, device='cuda:0')
+Train Epoch: 56 [0/41 (0%)]	Loss: 0.394580
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.2469, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.3280, device='cuda:0')
+Train Epoch: 57 [0/41 (0%)]	Loss: 0.383347
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.2343, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.3159, device='cuda:0')
+Train Epoch: 58 [0/41 (0%)]	Loss: 0.371695
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.2236, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.3052, device='cuda:0')
+Train Epoch: 59 [0/41 (0%)]	Loss: 0.361275
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.2132, device='cuda:0')
+Top 1 Accuracy = tensor(76.9231, device='cuda:0')
+Average Loss = tensor(0.2947, device='cuda:0')
+Train Epoch: 60 [0/41 (0%)]	Loss: 0.350806
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.2029, device='cuda:0')
+Top 1 Accuracy = tensor(80.7692, device='cuda:0')
+Average Loss = tensor(0.2839, device='cuda:0')
+Train Epoch: 61 [0/41 (0%)]	Loss: 0.339790
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.1930, device='cuda:0')
+Top 1 Accuracy = tensor(80.7692, device='cuda:0')
+Average Loss = tensor(0.2725, device='cuda:0')
+Train Epoch: 62 [0/41 (0%)]	Loss: 0.328077
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.1838, device='cuda:0')
+Top 1 Accuracy = tensor(80.7692, device='cuda:0')
+Average Loss = tensor(0.2615, device='cuda:0')
+Train Epoch: 63 [0/41 (0%)]	Loss: 0.316596
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.1758, device='cuda:0')
+Top 1 Accuracy = tensor(84.6154, device='cuda:0')
+Average Loss = tensor(0.2493, device='cuda:0')
+Train Epoch: 64 [0/41 (0%)]	Loss: 0.304449
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.1665, device='cuda:0')
+Top 1 Accuracy = tensor(84.6154, device='cuda:0')
+Average Loss = tensor(0.2384, device='cuda:0')
+Train Epoch: 65 [0/41 (0%)]	Loss: 0.293845
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.1542, device='cuda:0')
+Top 1 Accuracy = tensor(84.6154, device='cuda:0')
+Average Loss = tensor(0.2282, device='cuda:0')
+Train Epoch: 66 [0/41 (0%)]	Loss: 0.281489
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.1425, device='cuda:0')
+Top 1 Accuracy = tensor(84.6154, device='cuda:0')
+Average Loss = tensor(0.2206, device='cuda:0')
+Train Epoch: 67 [0/41 (0%)]	Loss: 0.271374
+Top 1 Accuracy = tensor(90., device='cuda:0')
+Average Loss = tensor(0.1334, device='cuda:0')
+Top 1 Accuracy = tensor(84.6154, device='cuda:0')
+Average Loss = tensor(0.2109, device='cuda:0')
+Train Epoch: 68 [0/41 (0%)]	Loss: 0.260635
+Top 1 Accuracy = tensor(95., device='cuda:0')
+Average Loss = tensor(0.1258, device='cuda:0')
+Top 1 Accuracy = tensor(92.3077, device='cuda:0')
+Average Loss = tensor(0.1996, device='cuda:0')
+Train Epoch: 69 [0/41 (0%)]	Loss: 0.248705
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1193, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1909, device='cuda:0')
+Train Epoch: 70 [0/41 (0%)]	Loss: 0.239564
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1119, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1836, device='cuda:0')
+Train Epoch: 71 [0/41 (0%)]	Loss: 0.231147
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1093, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1799, device='cuda:0')
+Train Epoch: 72 [0/41 (0%)]	Loss: 0.226234
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1028, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1761, device='cuda:0')
+Train Epoch: 73 [0/41 (0%)]	Loss: 0.222951
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.0997, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1711, device='cuda:0')
+Train Epoch: 74 [0/41 (0%)]	Loss: 0.215577
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.0964, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1675, device='cuda:0')
+Train Epoch: 75 [0/41 (0%)]	Loss: 0.211195
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.0908, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1625, device='cuda:0')
+Train Epoch: 76 [0/41 (0%)]	Loss: 0.205202
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.0842, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1576, device='cuda:0')
+Train Epoch: 77 [0/41 (0%)]	Loss: 0.199777
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.0802, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1534, device='cuda:0')
+Train Epoch: 78 [0/41 (0%)]	Loss: 0.194222
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.0774, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1503, device='cuda:0')
+Train Epoch: 79 [0/41 (0%)]	Loss: 0.190441
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.0753, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1492, device='cuda:0')
+Train Epoch: 80 [0/41 (0%)]	Loss: 0.188123
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.0735, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1475, device='cuda:0')
+Train Epoch: 81 [0/41 (0%)]	Loss: 0.185524
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.0712, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1446, device='cuda:0')
+Train Epoch: 82 [0/41 (0%)]	Loss: 0.182086
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.0687, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1410, device='cuda:0')
+Train Epoch: 83 [0/41 (0%)]	Loss: 0.178232
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.0665, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1378, device='cuda:0')
+Train Epoch: 84 [0/41 (0%)]	Loss: 0.174663
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.0649, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1356, device='cuda:0')
+Train Epoch: 85 [0/41 (0%)]	Loss: 0.171843
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.0632, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1337, device='cuda:0')
+Train Epoch: 86 [0/41 (0%)]	Loss: 0.169594
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.0624, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1319, device='cuda:0')
+Train Epoch: 87 [0/41 (0%)]	Loss: 0.167074
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.0614, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1302, device='cuda:0')
+Train Epoch: 88 [0/41 (0%)]	Loss: 0.164988
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.0601, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1284, device='cuda:0')
+Train Epoch: 89 [0/41 (0%)]	Loss: 0.162723
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.0588, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1266, device='cuda:0')
+Train Epoch: 90 [0/41 (0%)]	Loss: 0.160380
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.0575, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1247, device='cuda:0')
+Train Epoch: 91 [0/41 (0%)]	Loss: 0.158106
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.0564, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1231, device='cuda:0')
+Train Epoch: 92 [0/41 (0%)]	Loss: 0.155968
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.0554, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1216, device='cuda:0')
+Train Epoch: 93 [0/41 (0%)]	Loss: 0.154232
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.0549, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1202, device='cuda:0')
+Train Epoch: 94 [0/41 (0%)]	Loss: 0.152431
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.0543, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1190, device='cuda:0')
+Train Epoch: 95 [0/41 (0%)]	Loss: 0.150877
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.0536, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1176, device='cuda:0')
+Train Epoch: 96 [0/41 (0%)]	Loss: 0.149235
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.0529, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1163, device='cuda:0')
+Train Epoch: 97 [0/41 (0%)]	Loss: 0.147512
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.0521, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1149, device='cuda:0')
+Train Epoch: 98 [0/41 (0%)]	Loss: 0.145729
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.0516, device='cuda:0')
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.1140, device='cuda:0')
+Train Epoch: 99 [0/41 (0%)]	Loss: 0.144332
+Top 1 Accuracy = tensor(100., device='cuda:0')
+Average Loss = tensor(0.0506, device='cuda:0')
