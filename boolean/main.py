@@ -24,7 +24,7 @@ if __name__ == '__main__':
     # Specify ANN architecture and training hyper-parameters
     ####################################################################################################################
 
-    parser.add_argument('--model', type=str, default='hierarchically_modular',
+    parser.add_argument('--model', type=str, default='mlp',
                         choices=['mlp','hierarchically_modular', 'hierarchically_modular_shared_modules'])
 
     ### MLP architecture arguments
@@ -63,7 +63,7 @@ if __name__ == '__main__':
     parser.add_argument('--epochs', type=int, default=1000)
 
     parser.add_argument('--lr', type=float, default=0.01)
-    parser.add_argument('--lr_module_input', type=float, default=0.1)
+    parser.add_argument('--lr_module_input', type=float, default=None)
     parser.add_argument('--lr_module_location', type=float, default=None)
 
     parser.add_argument('--weight_decay', type=float, default=0.0001)
