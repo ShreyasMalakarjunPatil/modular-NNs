@@ -2,14 +2,14 @@
 __pycache__/
 *.py[cod]
 *$py.class
-results/
+*results/
 output.txt
 output2.txt
 main2.py
 *.sbatch
 *.out
 *.ipynb
-out/
+*out/
 *.bash
 # C extensions
 *.so
