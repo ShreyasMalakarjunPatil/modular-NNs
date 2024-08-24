@@ -56,8 +56,8 @@ def load_data(dataset_path, modularity, batch_size, dataset_noise=False, dataset
 
     train_size = int(data[0].size()[0]*dataset_split)
     test_size = int(data[0].size()[0]) - int(data[0].size()[0]*dataset_split)
-    val_size = int(0.2*train_size)
-    train_size = train_size - val_size
+    val_size = test_size//2
+    test_size = test_size - val_size
 
     train_dataset, val_dataset, test_dataset = torch.utils.data.random_split(dataset, [train_size, val_size, test_size], generator=generator)
     train_dataset2 = copy.deepcopy(train_dataset)
