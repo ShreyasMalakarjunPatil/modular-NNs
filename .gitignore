@@ -10,6 +10,7 @@ main2.py
 *.out
 *.ipynb
 *out/
+*appendix/
 *.bash
 # C extensions
 *.so
