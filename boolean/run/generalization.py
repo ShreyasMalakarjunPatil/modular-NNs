@@ -18,7 +18,7 @@ def run(args):
     if args.model=='hierarchically_modular_shared_modules':
         path = direct_results + args.model + str(args.num_slots) + str(args.num_shared_modules) + str(args.module_arch) + str(args.topk) + str(args.use_gumbel) + str(args.tau) + str(args.per_sample_routing) + str(args.known_module_inputs) + str(args.known_module_locations) + str(args.known_func_outputs) + str(args.lr) + str(args.lr_module_input) + str(args.lr_module_location) + str(args.batch_size) + str(args.epochs) + str(args.weight_decay) + str(args.gamma) + str(args.seed) + '_Results' + str(args.dataset_split) + str(args.dataset_split_seed) + str(args.dataset_noise) + '.pkl'
     
-    if os.path.exists(path):
+    if os.path.exists(path) and os.path.getsize(path) > 0:
         print('Shreyas:', path)
     else:
         train_loader, train_loader2, validation_loader, test_loader = load.load_data(args.dataset_path, args.modularity, args.batch_size, args.dataset_noise, args.dataset_split, args.dataset_split_seed)
