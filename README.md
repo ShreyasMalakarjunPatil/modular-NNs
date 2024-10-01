@@ -63,7 +63,7 @@ python3 main.py --modularity 2 2 3 2 2 --num_digits 8 --dataset_split_seed 40 --
 
 * Running training for hierarchically modular NNs 
 ```
-python3 main.py --modularity 2 2 3 2 2 --num_digits 8 --dataset_split_seed 40 --dataset_split 0.8 --num_samples_per_combination_train 100 --num_samples_per_combination_test 100 --model hierarchically_modular_mlp --num_img_modules 2 --num_modules 3 2 --img_module_arch 784 128 64 3 --module_arch 2 12 1 --topk 2 --lr 0.01 --lr_module_input 0.01 --batch_size 128 --weight_decay 0.0001 --epochs 200 --seed 0
+python3 main.py --modularity 2 2 3 2 2 --num_digits 8 --dataset_split_seed 40 --dataset_split 0.8 --num_samples_per_combination_train 100 --num_samples_per_combination_test 100 --model hierarchically_modular_mlp --num_img_modules 2 --num_modules 3 2 --img_module_arch 784 128 64 3 --module_arch 2 12 1 --topk 2 --tau 0.5 --lr 0.01 --lr_module_input 0.01 --batch_size 128 --weight_decay 0.0001 --epochs 200 --seed 0
 ```
 * To run training for known routing simply add the following arguments: 
 ```
@@ -72,7 +72,7 @@ python3 main.py --modularity 2 2 3 2 2 --num_digits 8 --dataset_split_seed 40 --
 
 * Running training for hierarchically modular NNs with shared modules
 ```
-python3 main.py --modularity 2 2 3 2 2 --num_digits 8 --dataset_split_seed 40 --dataset_split 0.8 --num_samples_per_combination_train 1000 --num_samples_per_combination_test 100 --model hierarchically_modular_shared_modules_mlp --num_img_slots 2 --num_slots 3 2 --num_img_shared_modules 1 --num_shared_modules 2 --img_module_arch 784 128 64 3 --module_arch 2 12 1 --topk 2 --lr 0.01 --lr_module_input 0.01 --lr_module_location 0.01 --batch_size 128 --weight_decay 0.0001 --epochs 200 --seed 0
+python3 main.py --modularity 2 2 3 2 2 --num_digits 8 --dataset_split_seed 40 --dataset_split 0.8 --num_samples_per_combination_train 1000 --num_samples_per_combination_test 100 --model hierarchically_modular_shared_modules_mlp --num_img_slots 2 --num_slots 3 2 --num_img_shared_modules 1 --num_shared_modules 2 --img_module_arch 784 128 64 3 --module_arch 2 12 1 --topk 2 --tau 0.5 --lr 0.01 --lr_module_input 0.01 --lr_module_location 0.01 --batch_size 128 --weight_decay 0.0001 --epochs 200 --seed 0
 
 ```
 * To run training for known routing simply add the following arguments: 
