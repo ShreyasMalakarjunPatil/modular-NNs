@@ -7,7 +7,7 @@ import copy
 from torch.utils.data import Dataset, ConcatDataset
 import torch.optim as optim
 
-from models.mlp import mlp  
+from models.mlp import mlp, mlp2  
 from models.hierarchically_modular_nn import hierarchically_modular  
 from models.hierarchically_modular_shared_modules import hierarchically_modular_shared_modules
 
@@ -143,6 +143,7 @@ def load_routing(args):
 def load_model(model):
     models = {
             'mlp' : mlp,
+            'mlp2' : mlp2,
             'hierarchically_modular' : hierarchically_modular,
             'hierarchically_modular_shared_modules' : hierarchically_modular_shared_modules
             }

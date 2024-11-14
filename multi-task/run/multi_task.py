@@ -11,7 +11,7 @@ def run(args):
     dev = load.load_device(args.gpu)
     direct_models, direct_results = load.create_directory(args)
 
-    if args.model=='mlp':
+    if args.model=='mlp' or args.model=='mlp2':
         path = direct_results + args.model + str(args.arch) + str(args.pruning_ratio) + str(args.lr) + str(args.batch_size) + str(args.epochs) + str(args.weight_decay) + str(args.gamma) + str(args.seed) + '_Results' + str(args.dataset_split) + str(args.dataset_split_seed)+ str(args.dataset_noise) + '.pkl'
     if args.model=='hierarchically_modular':
         path = direct_results + args.model + str(args.num_modules) + str(args.module_arch) + str(args.topk) + str(args.use_gumbel) + str(args.tau) + str(args.per_sample_routing) + str(args.known_module_inputs) + str(args.known_func_outputs) + str(args.lr) + str(args.lr_module_input) + str(args.batch_size) + str(args.epochs) + str(args.weight_decay) + str(args.gamma) + str(args.seed) + '_Results' + str(args.dataset_split) + str(args.dataset_split_seed) + str(args.dataset_noise) + '.pkl'
@@ -25,7 +25,7 @@ def run(args):
         loss = load.load_loss(args.loss)
         opt, opt_kwargs = load.load_optimizer(args.optimizer)
 
-        if args.model == 'mlp':
+        if args.model == 'mlp' or args.model=='mlp2':
 
             model = load.load_model(args.model)(args.arch, args.num_tasks).to(dev)
             if args.pruning_ratio > 0.0:
@@ -92,7 +92,7 @@ def run(args):
         results.append(test_accuracy)
         
 
-        if args.model=='mlp':
+        if args.model=='mlp' or args.model=='mlp2':
 
             with open(direct_results + args.model + str(args.arch) + str(args.pruning_ratio) + str(args.lr) + str(args.batch_size) + str(args.epochs) + str(args.weight_decay) + str(args.gamma) + str(args.seed) + '_Results' + str(args.dataset_split) + str(args.dataset_split_seed)+ str(args.dataset_noise) + '.pkl', "wb") as fout:
                 pkl.dump(results, fout, protocol=pkl.HIGHEST_PROTOCOL)
