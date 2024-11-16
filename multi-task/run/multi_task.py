@@ -16,9 +16,9 @@ def run(args):
 
     if args.model=='mlp' or args.model=='mlp2':
         path = direct_results + args.model + str(args.arch) + str(args.pruning_ratio) + str(args.lr) + str(args.batch_size) + str(args.epochs) + str(args.weight_decay) + str(args.gamma) + str(args.seed) + '_Results' + str(args.dataset_split) + str(args.dataset_split_seed)+ str(args.dataset_noise) + '.pkl'
-    if args.model=='hierarchically_modular':
+    if args.model=='hierarchically_modular' or args.model=='hierarchically_modular2':
         path = direct_results + args.model + str(args.num_modules) + str(args.module_arch) + str(args.topk) + str(args.use_gumbel) + str(args.tau) + str(args.per_sample_routing) + str(args.known_module_inputs) + str(args.known_func_outputs) + str(args.lr) + str(args.lr_module_input) + str(args.batch_size) + str(args.epochs) + str(args.weight_decay) + str(args.gamma) + str(args.seed) + '_Results' + str(args.dataset_split) + str(args.dataset_split_seed) + str(args.dataset_noise) + '.pkl'
-    if args.model=='hierarchically_modular_shared_modules':
+    if args.model=='hierarchically_modular_shared_modules' or args.model=='hierarchically_modular_shared_modules2':
         path = direct_results + args.model + str(args.num_slots) + str(args.num_shared_modules) + str(args.module_arch) + str(args.topk) + str(args.use_gumbel) + str(args.tau) + str(args.per_sample_routing) + str(args.known_module_inputs) + str(args.known_module_locations) + str(args.known_func_outputs) + str(args.lr) + str(args.lr_module_input) + str(args.lr_module_location) + str(args.batch_size) + str(args.epochs) + str(args.weight_decay) + str(args.gamma) + str(args.seed) + '_Results' + str(args.dataset_split) + str(args.dataset_split_seed) + str(args.dataset_noise) + '.pkl'
     
     if os.path.exists(path) and os.path.getsize(path) > 0:
@@ -36,7 +36,7 @@ def run(args):
                 model.set_masks(weight_mask, bias_mask)
             optimizer = opt(model.parameters(), lr=args.lr, weight_decay=args.weight_decay, **opt_kwargs)
 
-        elif args.model == 'hierarchically_modular':
+        elif args.model == 'hierarchically_modular' or args.model=='hierarchically_modular2':
 
             if args.known_module_inputs:
 
@@ -54,7 +54,7 @@ def run(args):
                     {'params': model.module_mlps.parameters(), 'lr': args.lr}
                     ], weight_decay=args.weight_decay, **opt_kwargs)
 
-        elif args.model == 'hierarchically_modular_shared_modules':
+        elif args.model == 'hierarchically_modular_shared_modules' or args.model=='hierarchically_modular_shared_modules2':
 
             if args.known_module_inputs and args.known_module_locations:
 
@@ -101,12 +101,12 @@ def run(args):
                 pkl.dump(results, fout, protocol=pkl.HIGHEST_PROTOCOL)
 
 
-        if args.model=='hierarchically_modular':
+        if args.model=='hierarchically_modular' or args.model=='hierarchically_modular2':
 
             with open(direct_results + args.model + str(args.num_modules) + str(args.module_arch) + str(args.topk) + str(args.use_gumbel) + str(args.tau) + str(args.per_sample_routing) + str(args.known_module_inputs) + str(args.known_func_outputs) + str(args.lr) + str(args.lr_module_input) + str(args.batch_size) + str(args.epochs) + str(args.weight_decay) + str(args.gamma) + str(args.seed) + '_Results' + str(args.dataset_split) + str(args.dataset_split_seed) + str(args.dataset_noise) + '.pkl', "wb") as fout:
                 pkl.dump(results, fout, protocol=pkl.HIGHEST_PROTOCOL)
 
-        if args.model=='hierarchically_modular_shared_modules':
+        if args.model=='hierarchically_modular_shared_modules' or args.model=='hierarchically_modular_shared_modules2':
 
             with open(direct_results + args.model + str(args.num_slots) + str(args.num_shared_modules) + str(args.module_arch) + str(args.topk) + str(args.use_gumbel) + str(args.tau) + str(args.per_sample_routing) + str(args.known_module_inputs) + str(args.known_module_locations) + str(args.known_func_outputs) + str(args.lr) + str(args.lr_module_input) + str(args.lr_module_location) + str(args.batch_size) + str(args.epochs) + str(args.weight_decay) + str(args.gamma) + str(args.seed) + '_Results' + str(args.dataset_split) + str(args.dataset_split_seed) + str(args.dataset_noise) + '.pkl', "wb") as fout:
                 pkl.dump(results, fout, protocol=pkl.HIGHEST_PROTOCOL)

@@ -8,8 +8,8 @@ from torch.utils.data import Dataset, ConcatDataset
 import torch.optim as optim
 
 from models.mlp import mlp, mlp2  
-from models.hierarchically_modular_nn import hierarchically_modular  
-from models.hierarchically_modular_shared_modules import hierarchically_modular_shared_modules
+from models.hierarchically_modular_nn import hierarchically_modular, hierarchically_modular2  
+from models.hierarchically_modular_shared_modules import hierarchically_modular_shared_modules, hierarchically_modular_shared_modules2
 
 def set_seed(seed):
     torch.manual_seed(seed)
@@ -145,7 +145,9 @@ def load_model(model):
             'mlp' : mlp,
             'mlp2' : mlp2,
             'hierarchically_modular' : hierarchically_modular,
-            'hierarchically_modular_shared_modules' : hierarchically_modular_shared_modules
+            'hierarchically_modular_shared_modules' : hierarchically_modular_shared_modules,
+            'hierarchically_modular2' : hierarchically_modular2,
+            'hierarchically_modular_shared_modules2' : hierarchically_modular_shared_modules2
             }
 
     return models[model]

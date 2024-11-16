@@ -11,31 +11,31 @@ if __name__ == '__main__':
     # Specify Task, Function, Path to dataset
     ####################################################################################################################
 
-    parser.add_argument('--num_tasks', type=int, default=2)
+    parser.add_argument('--num_tasks', type=int, default=3)
     parser.add_argument('--modularity', nargs='+', type=int, default= [6,3,2,2])
-    parser.add_argument('--dataset_path', type=str, default='./datasets/generalization/')
+    parser.add_argument('--dataset_path', type=str, default='./datasets/all/')
     parser.add_argument('--dataset_noise', type=bool, default=True)
-    parser.add_argument('--dataset_split', type=float, default=0.5)
+    parser.add_argument('--dataset_split', type=float, default=0.7)
     parser.add_argument('--dataset_split_seed', type=int, default=40)
     
-    parser.add_argument('--result_path', type=str, default='./results2/')
+    parser.add_argument('--result_path', type=str, default='./results/')
 
     ####################################################################################################################
     # Specify ANN architecture and training hyper-parameters
     ####################################################################################################################
 
-    parser.add_argument('--model', type=str, default='hierarchically_modular_shared_modules',
-                        choices=['mlp','mlp2','hierarchically_modular', 'hierarchically_modular_shared_modules'])
+    parser.add_argument('--model', type=str, default='hierarchically_modular_shared_modules2',
+                        choices=['mlp','mlp2','hierarchically_modular', 'hierarchically_modular_shared_modules','hierarchically_modular2', 'hierarchically_modular_shared_modules2'])
 
     ### MLP architecture arguments
-    parser.add_argument('--arch', nargs='+', type=int, default=[6,36,36,36,2])
+    parser.add_argument('--arch', nargs='+', type=int, default=[6,36,36,36,36,36,2])
     parser.add_argument('--pruning_ratio', type=float, default=0.0)
 
     ### Hierarchically modular architecture arguments
-    parser.add_argument('--num_modules', nargs='+', type=int, default=[6,4])
+    parser.add_argument('--num_modules', nargs='+', type=int, default=[3,3,2])
 
     ### Hierarchically modular architecture with shared modules arguments
-    parser.add_argument('--num_slots', nargs='+', type=int, default=[3,2])
+    parser.add_argument('--num_slots', nargs='+', type=int, default=[3,3,2])
     parser.add_argument('--num_shared_modules', type=int, default=3)
     
     ### Shared arguments
@@ -59,7 +59,7 @@ if __name__ == '__main__':
     parser.add_argument('--loss', type=str, default='BCE',
                         choices=['CE', 'MSE', 'BCE'])
 
-    parser.add_argument('--batch_size', type=int, default=4)
+    parser.add_argument('--batch_size', type=int, default=16)
     parser.add_argument('--epochs', type=int, default=1000)
 
     parser.add_argument('--lr', type=float, default=0.01)

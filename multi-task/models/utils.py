@@ -67,6 +67,7 @@ def gumbel_sigmoid(logits, k: int = 2, hard: bool = False, dim: int = 1, use_gum
 
     if hard: 
         indices = torch.topk(y_soft, k, dim=dim)[-1]
+        #print(indices)
         y_hard1 = torch.zeros_like(logits, memory_format=torch.legacy_contiguous_format)
         y_hard2 = torch.zeros_like(logits, memory_format=torch.legacy_contiguous_format)
         y_hard1.scatter_(1, indices[:,0].view(indices[:,0].size(0),1, indices[:,0].size(1)), 1)
@@ -91,6 +92,7 @@ def gumbel_softmax(logits, hard: bool = False, dim: int = 1, use_gumbel=True, ta
 
     if hard:
         indices = torch.topk(y_soft, 1, dim=dim)[-1]
+        #print(indices)
         y_hard = torch.zeros_like(logits, memory_format=torch.legacy_contiguous_format)
         y_hard.scatter_(1, indices[:,0].view(indices[:,0].size(0),1, indices[:,0].size(1)), 1)
         ret = y_hard - y_soft.detach() + y_soft
