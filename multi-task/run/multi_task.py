@@ -4,6 +4,7 @@ import pickle as pkl
 from utils import train, load
 from models import utils
 import os
+import copy
 
 def run(args):
 

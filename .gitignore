@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 *results/
+*results2/
 output.txt
 output2.txt
 main2.py
