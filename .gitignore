@@ -8,6 +8,7 @@ __pycache__/
 output.txt
 output2.txt
 main2.py
+main3.py
 *.sbatch
 *.out
 *.ipynb
