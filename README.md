@@ -1,6 +1,6 @@
 # When and how are modular networks better?
 
-This repository is the official implementation of the paper titled "When and how are modular networks better?" under review at ICLR 2025. 
+This repository is the official implementation of the paper titled "When and how are modular networks better?" under review at ICML 2025. 
 
 Visualizations of architectures we explored in our paper
 
@@ -17,7 +17,7 @@ pip3 install -r requirements.txt
 
 ## Training commands
 
-The code is divided into 2 directories, one for learning Boolean functions and the second to learn the MNIST based hierarchical and modular task. To run the training scripts please move into the respective directories. 
+The code is divided into 4 directories, one for learning Boolean functions (boolean), the second to learn the MNIST based task (mnist), third for multi-task learning experiment and fourth for the experiments with module input size. To run the training scripts please move into the respective directories. 
 
 ### Training on Boolean functions
 
@@ -81,7 +81,3 @@ python3 main.py --modularity 2 2 3 2 2 --num_digits 8 --dataset_split_seed 40 --
 ```
 
 
-Find a full list of hyper-parameters and values through:
-```
-python3 main.py --help
-```
