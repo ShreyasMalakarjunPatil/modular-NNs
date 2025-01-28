@@ -1,6 +1,6 @@
-# When and how are modular networks better?
+# How Can Knowledge of a Task’s Modular Structure Improve Generalization and Training Efficiency?
 
-This repository is the official implementation of the paper titled "When and how are modular networks better?" under review at ICML 2025. 
+This repository is the official implementation of the paper titled "How Can Knowledge of a Task’s Modular Structure Improve Generalization and Training Efficiency?" under review at ICML 2025. 
 
 Visualizations of architectures we explored in our paper
 
