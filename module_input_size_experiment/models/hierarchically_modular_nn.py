@@ -98,9 +98,13 @@ class hierarchically_modular(nn.Module):
             for i in range(self.num_modules[lkj]):
                 #print(x)
                 
+                #if x.size(1) <= self.topk: ## if not permutable, just uncomment this and use tabs on the rest
+                #    #print(lkj, x.size(1), self.topk)
+                #    module_inp = x
+                #else:
                 if self.per_sample_routing:
-                    #variable_1 = (x*scores1[:,:,i]).sum(dim=1).view(x.size(0),1)
-                    #variable_2 = (x*scores2[:,:,i]).sum(dim=1).view(x.size(0),1)
+                        #variable_1 = (x*scores1[:,:,i]).sum(dim=1).view(x.size(0),1)
+                        #variable_2 = (x*scores2[:,:,i]).sum(dim=1).view(x.size(0),1)
                     for k in range(self.topk): # Newly added
                         variable = (x*scores[k][:,:,i]).sum(dim=1).view(x.size(0),1)
                         if k==0:
@@ -108,8 +112,8 @@ class hierarchically_modular(nn.Module):
                         else:
                             module_inp = torch.cat((module_inp,variable), dim=1)
                 else:
-                    #variable_1 = (x*scores1[task_id,:,i]).sum(dim=1).view(x.size(0),1)
-                    #variable_2 = (x*scores2[task_id,:,i]).sum(dim=1).view(x.size(0),1)
+                        #variable_1 = (x*scores1[task_id,:,i]).sum(dim=1).view(x.size(0),1)
+                        #variable_2 = (x*scores2[task_id,:,i]).sum(dim=1).view(x.size(0),1)
                     for k in range(self.topk): # Newly added
                         variable = (x*scores[k][task_id,:,i]).sum(dim=1).view(x.size(0),1)
                         if k==0:
