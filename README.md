@@ -1,6 +1,6 @@
 # How Can Knowledge of a Task’s Modular Structure Improve Generalization and Training Efficiency?
 
-This repository is the official implementation of the paper titled "How Can Knowledge of a Task’s Modular Structure Improve Generalization and Training Efficiency?" under review at ICML 2025. 
+This repository is the official implementation of the paper titled "How Can Knowledge of a Task’s Modular Structure Improve Generalization and Training Efficiency?" under review at TMLR. 
 
 Visualizations of architectures we explored in our paper
 
